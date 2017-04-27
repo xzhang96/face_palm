@@ -15,7 +15,9 @@ def predict_face(path):
         clf = pkl.load(f)
 
     X = pca.transform(flattened_image)
-    result = clf.predict_proba(X)
+    prob = clf.predict_proba(X)
+    result = prob.reshape((8, 1))
     emotions = clf.classes_
-    #print(result, file=open('result_prob.txt', 'w'))
     print(result, emotions)
+    print(type(result))
+    return result

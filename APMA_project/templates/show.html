@@ -1,12 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Results</title>
+    <style>
+        table {border-collapse: collapse; width: 100%;}
+        th, td {text-align: center; padding: 8px;}
+        tr:nth-child(even){background-color: #f2f2f2}
+    </style>
 </head>
 <body>
-    <h1>File</h1>
-    <a href = "{{ url_for('static') }}">File</a>
-
+    <h1>  </h1>
+    <img src = "static/{{ filename }}" id = "myImage" align="center"><br/>
+    <h1>Here are the Results!</h1>
+    <table>
+        <tr>
+            <th>Emotions</th>
+            <th>Probabilities</th>
+        </tr>
+        <tr>
+            <th>Anger</th>
+            <th>{{ anger }}</th>
+        </tr>
+        <tr>
+            <th>Contempt</th>
+            <th>{{ contempt }}</th>
+        </tr>
+        <tr>
+            <th>Disgust</th>
+            <th>{{ disgust }}</th>
+        </tr>
+        <tr>
+            <th>Fear</th>
+            <th>{{ fear }}</th>
+        </tr>
+        <tr>
+            <th>Happy</th>
+            <th>{{ happy }}</th>
+        </tr>
+        <tr>
+            <th>Neutral</th>
+            <th>{{ neutral }}</th>
+        </tr>
+        <tr>
+            <th>Sadness</th>
+            <th>{{ sadness }}</th>
+        </tr>
+        <tr>
+            <th>Surprise</th>
+            <th>{{ surprise }}</th>
+        </tr>
+    </table>
 </body>
 </html>

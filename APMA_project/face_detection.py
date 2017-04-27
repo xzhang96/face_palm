@@ -2,7 +2,7 @@ import cv2
 import os
 
 
-def detect_faces(image):
+def detect_faces(image,filename):
     faceDet = cv2.CascadeClassifier("cv_classifier/haarcascade_frontalface_default.xml")
     faceDet2 = cv2.CascadeClassifier("cv_classifier/haarcascade_frontalface_alt2.xml")
     faceDet3 = cv2.CascadeClassifier("cv_classifier/haarcascade_frontalface_alt.xml")
@@ -39,6 +39,6 @@ def detect_faces(image):
 
         try:
             out = cv2.resize(gray, (350, 350))  # Resize face so all images have same size
-            cv2.imwrite("static/file.jpg", out)  # Write image
+            cv2.imwrite("static/"+filename+"face.jpg", out)  # Write image
         except:
             pass  # If error, pass file
