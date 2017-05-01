@@ -1,14 +1,137 @@
 <!DOCTYPE html>
+<html>
+<title>Upload Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {font-family: "Montserrat", sans-serif}
+    h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif}
+    .w3-row-padding img {margin-bottom: 12px}
+    .w3-sidebar {width: 120px; background: #222; margin-top: 100px} /* set the width fo the sidebar */
+    #main {margin-left: 120px}
+    #upload-form {color: white; background-color: #222; display: table; padding: 15px; border: solid 2px whitesmoke;}
+    #banner {max-width:100%;height:auto}img{margin-bottom: 50px; margin-top: 50px}a{color:inherit}
+</style>
 
-<body>
+<body class="w3-black">
 
-    <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+<!=========================================== SIDEBAR =================================================>
 
-    <strong>Files:</strong><br>
-    <input id="file-picker" type="file" name="file" accept="image/*" multiple>
-    <div id="msg"></div>
-    <input type="submit" value="Upload!" id="upload-button">
-</form>
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>HOME</p>
+        </a>
+        <a href="#demo" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-eye w3-xxlarge"></i>
+            <p>DEMO</p>
+        </a>
+        <a href="#explain" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-compass w3-xxlarge"></i>
+            <p>EXPLAIN</p>
+        </a>
+        <a href="#reference" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-book w3-xxlarge"></i>
+            <p>REFERENCE</p>
+        </a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-envelope w3-xxlarge"></i>
+            <p>CONTACT</p>
+        </a>
+    </nav>
 
+<!=========================================== PAGE CONTENT =================================================>
+
+    <div class="w3-padding-large" id="main">
+        <!---------------------- Home Section ----------------------------->
+        <header class="w3-container w3-center w3-black" id="home">
+            <img src="/static/banner.jpg" width="1500" id="banner">
+            <h1 class="w3-xxxlarge"><span class="w3-hide-small">SENTIMENT ANALYSIS ON FACE IMAGES</span> </h1>
+            <h2 class="w3-xxlarge" >Columbia University</h2>
+            <h2>APMA E4990 Introduction to Data Science in Industry</h2>
+            <h2>Final Project</h2>
+            <h2>Cindy Zhang&nbsp;&nbsp;&nbsp;&nbsp;Ben Lai</h2>
+            <br><br><br><br>
+        </header>
+        <!---------------------- End Home Section ------------------------->
+
+
+        <!---------------------------------------- Demo Section ----------------------------------->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="demo">
+            <h2 class="w3-text-light-grey">Project Demo</h2>
+            <hr style="width: 400px" class="w3-opacity">
+            <h2 class="w3-large">Please upload your face image:</h2>
+            <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" multiple><br>
+                    <p>
+                        <button class="w3-button w3-light-grey w3-padding-medium" type="submit">
+                        <i class="fa fa-paper-plane"></i> SUBMIT
+                        </button>
+                    </p>
+            </form>
+            <br>
+            <p></p>
+        </div>
+        <!----------------------------------------- End Demo Section -------------------------------------->
+
+
+        <!----------------------------- Explain Section ----------------------------->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="explain">
+            <h2 class="w3-text-light-grey">Project Description</h2>
+            <hr style="width: 400px" class="w3-opacity">
+            <p>Some description about this project.</p>
+        </div>
+        <!---------------------------- End Explain Section --------------------------->
+
+
+        <!----------------------------- Reference Section ------------------------------>
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="reference">
+            <h2 class="w3-text-light-grey">Reference</h2>
+            <hr style="width: 400px" class="w3-opacity">
+            <p>- Kanade, T., Cohn, J. F., & Tian, Y. (2000). <a href="http://www.ri.cmu.edu/pub_files/pub2/kanade_takeo_2000_1/kanade_takeo_2000_1.pdf">
+                <i>Comprehensive database for facial expression analysis.</i></a> Proceedings of the Fourth
+                IEEE International Conference on Automatic Face and Gesture Recognition (FG'00), Grenoble, France, 46-53.</p>
+
+            <p>- Lucey, P., Cohn, J. F., Kanade, T., Saragih, J., Ambadar, Z., & Matthews, I. (2010).
+            <a href="http://ieeexplore.ieee.org/document/5543262/?reload=true"><i>The Extended Cohn-Kanade Dataset (CK+):
+                A complete expression dataset for action unit and emotion-specified expression.</i></a>
+                Proceedings of the Third International Workshop on CVPR for Human Communicative Behavior Analysis
+                (CVPR4HB 2010), San Francisco, USA, 94-101. </p>
+
+            <p>- Gent, P. V,. (2016). <a href="http://www.paulvangent.com/2016/04/01/emotion-recognition-with-python-opencv-and-a-face-dataset/">
+                <i>Emotion Recognition With Python, OpenCV and a Face Dataset</i></a></p>
+        </div>
+        <!---------------------------- End Reference Section ---------------------------->
+
+
+        <!------------------------------- Contact Section -------------------------------->
+        <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+            <h2 class="w3-text-light-grey">Contact Us</h2>
+            <hr style="width:400px" class="w3-opacity">
+
+            <div class="w3-section">
+                <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>
+                  Columbia University, New York, US</p>
+                <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i>
+                  Email: bl2633@columbia.edu <br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; xz2582@columbia.edu</p>
+                <p><i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i>
+                  Github: <a href="https://github.com/bl-2633">Ben Lai</a><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/xzhang96">Cindy Zhang</a></p>
+            </div><br>
+        </div>
+        <!--------------------------------- End Contact Section ----------------------------->
+
+
+        <!------------------------------------- Footer ----------------------------------------->
+        <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+            <p class="w3-medium">Powered by <a href="https://cloud.google.com/">Google Cloud Platform</a></p>
+        </footer>
+        <!------------------------------------- End Footer -------------------------------------->
+
+    </div>
 
 </body>
+</html>

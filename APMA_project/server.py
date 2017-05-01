@@ -1,9 +1,9 @@
 import os
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, request
 from face_detection import detect_faces
 from prediction import predict_face
 import time
-import glob
+from jinja2 import Environment
 
 app = Flask(__name__)
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))

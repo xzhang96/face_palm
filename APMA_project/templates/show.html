@@ -2,57 +2,74 @@
 <html lang="en">
 <head>
     <title>Results</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        table {border-collapse: collapse; width: 100%;}
-        th, td {text-align: center; padding: 8px;}
-        tr:nth-child(even){background-color: #f2f2f2}
+        body {font-family: "Montserrat", sans-serif; margin: 100px}
+        h1 {font-family: "Montserrat", sans-serif}
+        #image-table {border-collapse:collapse; border-spacing:0; width:100%; display:table; text-align: center}
+        #original, #processed {border: solid 1px whitesmoke}
     </style>
 </head>
-<body>
-    <table>
+<body class="w3-black">
+
+    <!----------------------------------- Show Images -------------------------------------------->
+    <table id="image-table">
         <tr>
-            <td><img src = "static/{{ filename }}" id = "myImage"></td>
-            <td><img src = "static/{{ filename }}face.jpg"></td>
+            <th><img src="static/{{ filename }}" id="original"></th>
+            <th><img src = "static/{{ filename }}face.jpg" id="processed"></th>
+        </tr>
+        <tr>
+            <td>Original</td>
+            <td>After processing</td>
         </tr>
     </table>
+    <hr style="width: auto">
     <h1>Here are the Results!</h1>
-    <table>
+
+    <!----------------------------------- Show Results -------------------------------------------->
+    <table class="w3-table-all w3-text-dark-gray w3-centered">
         <tr>
             <th>Emotions</th>
             <th>Probabilities</th>
         </tr>
         <tr>
-            <th>Anger</th>
-            <th>{{ anger }}</th>
+            <td>Anger</td>
+            <td>{{ anger }}</td>
         </tr>
         <tr>
-            <th>Contempt</th>
-            <th>{{ contempt }}</th>
+            <td>Contempt</td>
+            <td>{{ contempt }}</td>
         </tr>
         <tr>
-            <th>Disgust</th>
-            <th>{{ disgust }}</th>
+            <td>Disgust</td>
+            <td>{{ disgust }}</td>
         </tr>
         <tr>
-            <th>Fear</th>
-            <th>{{ fear }}</th>
+            <td>Fear</td>
+            <td>{{ fear }}</td>
         </tr>
         <tr>
-            <th>Happy</th>
-            <th>{{ happy }}</th>
+            <td>Happy</td>
+            <td>{{ happy }}</td>
         </tr>
         <tr>
-            <th>Neutral</th>
-            <th>{{ neutral }}</th>
+            <td>Neutral</td>
+            <td>{{ neutral }}</td>
         </tr>
         <tr>
-            <th>Sadness</th>
-            <th>{{ sadness }}</th>
+            <td>Sadness</td>
+            <td>{{ sadness }}</td>
         </tr>
         <tr>
-            <th>Surprise</th>
-            <th>{{ surprise }}</th>
+            <td>Surprise</td>
+            <td>{{ surprise }}</td>
         </tr>
     </table>
+
+    <!----------------------------------- Home Button -------------------------------------------->
+    <br><br><br><br>
+    <a href="/"><button class="w3-button w3-padding-large"><i class="fa fa-home w3-xlarge"></i>Home</button></a>
 </body>
 </html>
