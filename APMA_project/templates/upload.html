@@ -14,7 +14,7 @@
     #main {margin-left: 120px}
     #upload-form {color: white; background-color: #222; display: table; padding: 15px; border: solid 2px whitesmoke;}
     #banner {max-width:100%;height:auto}img{margin-bottom: 50px; margin-top: 50px}a{color:inherit}
-    .sample {opacity: 0.7; width: 300px;}
+    .sample {opacity: 0.7; height: 250px;}
     .sample:hover {opacity: 1.0;}
 </style>
 
@@ -66,8 +66,11 @@
             <h2 class="w3-text-light-grey">Project Demo</h2>
             <hr style="width: 400px" class="w3-opacity">
             <h2 class="w3-large">Sample images:</h2>
-            <a href="{{ url_for('sample1') }}"><img src="/static/sample_1.jpg" class="sample"></a>
-            <a href="{{ url_for('sample4') }}"><img src="/static/sample_4.jpg" class="sample"></a>
+
+            <a href="{{ url_for('sample1') }}"><img src="/static/sample1.jpg" class="sample"></a>&emsp;&emsp;
+            <a href="{{ url_for('sample2') }}"><img src="/static/sample2.jpg" class="sample"></a>&emsp;&emsp;
+            <a href="{{ url_for('sample3') }}"><img src="/static/sample3.jpg" class="sample"></a>
+
             <h2 class="w3-large">Please upload your face image:</h2>
             <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
                 <input type="file" name="file" accept="image/*" multiple><br>
