@@ -1,7 +1,11 @@
+# This program is responsible of extracting faces from the images in the data set using OpenCV
+
+# import necessary libraries
 import cv2
 import glob
 import os
 
+# import four different OpenCV classifiers
 faceDet = cv2.CascadeClassifier("cv_classifier/haarcascade_frontalface_default.xml")
 faceDet2 = cv2.CascadeClassifier("cv_classifier/haarcascade_frontalface_alt2.xml")
 faceDet3 = cv2.CascadeClassifier("cv_classifier/haarcascade_frontalface_alt.xml")

@@ -1,5 +1,7 @@
+# This program is responsible of detecting faces from the images uploaded from the website
+
+# import necessary libraries
 import cv2
-import os
 
 
 def detect_faces(image,filename):
@@ -41,4 +43,4 @@ def detect_faces(image,filename):
             out = cv2.resize(gray, (350, 350))  # Resize face so all images have same size
             cv2.imwrite("static/"+filename+"face.jpg", out)  # Write image
         except:
-            pass  # If error, pass file
+            print('Cannot find face')  # If error, pass file
