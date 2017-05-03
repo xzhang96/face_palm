@@ -14,14 +14,19 @@ def index():
     return render_template('upload.html')     # upload.html is rendered
 
 
-@app.route('/sample1', methods=['GET'])
+@app.route('/sample1')
 def sample1():
     return render_template('sample1_results.html')
 
 
-@app.route('/sample4', methods=['GET'])
-def sample4():
-    return render_template('sample4_results.html')
+@app.route('/sample2')
+def sample2():
+    return render_template('sample2_results.html')
+
+
+@app.route('/sample3')
+def sample3():
+    return render_template('sample3_results.html')
 
 
 @app.route('/upload', methods=['POST'])   # Route the /upload page, after the image is uploaded by user
