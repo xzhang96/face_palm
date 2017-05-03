@@ -43,4 +43,4 @@ def detect_faces(image,filename):
             out = cv2.resize(gray, (350, 350))  # Resize face so all images have same size
             cv2.imwrite("static/"+filename+"face.jpg", out)  # Write image
         except:
-            print('Cannot find face')  # If error, pass file
+            pass  # If error, pass file
