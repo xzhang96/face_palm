@@ -14,6 +14,16 @@ def index():
     return render_template('upload.html')     # upload.html is rendered
 
 
+@app.route('/sample1', methods=['GET'])
+def sample1():
+    return render_template('sample1_results.html')
+
+
+@app.route('/sample4', methods=['GET'])
+def sample4():
+    return render_template('sample4_results.html')
+
+
 @app.route('/upload', methods=['POST'])   # Route the /upload page, after the image is uploaded by user
 def upload():
     target = os.path.join(APP_ROOT, 'static/')   # Define the path where the uploaded image would be saved
@@ -38,6 +48,7 @@ def upload():
     else:
         # 'notshow.html' is rendered to show an error message
         return render_template('notshow.html')
+
 
 if __name__ == "__main__":
     import click
