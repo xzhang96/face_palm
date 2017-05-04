@@ -1,4 +1,4 @@
-# This program is responsible of extracting faces from the images in the data set using OpenCV
+# This program is responsible for extracting faces from the images in the data set using OpenCV
 
 # import necessary libraries
 import cv2

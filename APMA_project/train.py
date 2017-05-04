@@ -1,4 +1,4 @@
-# This program is responsible of training the model
+# This program is responsible for training the model
 
 # import necessary libraries
 import pickle as pkl

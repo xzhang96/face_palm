@@ -1,4 +1,4 @@
-# This program is responsible of flattening the images in the data set
+# This program is responsible for flattening the images in the data set
 
 # import necessary libraries
 from PIL import Image

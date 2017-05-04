@@ -1,4 +1,4 @@
-# This program is responsible of detecting faces from the images uploaded from the website
+# This program is responsible for detecting faces from the images uploaded from the website
 
 # import necessary libraries
 import cv2

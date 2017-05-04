@@ -1,4 +1,4 @@
-# This program is responsible of performing PCA on the image vectors after being flattened
+# This program is responsible for performing PCA on the image vectors after being flattened
 
 # import necessary libraries
 import pickle as pkl
